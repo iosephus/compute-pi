@@ -16,7 +16,7 @@ shinyServer(function(input, output) {
   x <- reactive({input$recalc_button;if (input$set_seed) set.seed(rng_seed());runif(input$num_points, -1.0, 1.0)})
   y <- reactive({input$recalc_button;runif(input$num_points, -1.0, 1.0)})
 
-  in_circle <- reactive({sqrt(x()^2 + y()^2) < 1.0})
+  in_circle <- reactive({x()^2 + y()^2 < 1.0})
   num_in_circle <- reactive({sum(in_circle())})
   
   pi_est <- reactive({4.0 * num_in_circle() / input$num_points})

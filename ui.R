@@ -18,7 +18,7 @@ shinyUI(fluidPage(
       
       sliderInput("num_points",
                   "Number of points:",
-                  min = 2000,
+                  min = 5000,
                   max = 100000,
                   value = 10000),
       checkboxInput("set_seed", "Set RNG seed", value=FALSE),
